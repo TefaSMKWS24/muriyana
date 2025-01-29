@@ -7,14 +7,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class KasirController extends Controller
+
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('kasir.index');
+        return view('kategori.index');
     }
 
     /**
@@ -22,7 +23,8 @@ class KasirController extends Controller
      */
     public function create()
     {
-        return view('kasir.create');
+        return view('kategori.create');
+
 
     }
 
@@ -47,8 +49,9 @@ class KasirController extends Controller
      */
     public function edit(string $id)
     {
-        $kasir = DB::table('kasir')->where('kode_kasir', $id)->first();
-        return view('kasir.edit', compact('kasir'));
+        $kategori = DB::table('kategori')->where('kode_kategori', $id)->first();
+        return view('kategori.edit', compact('kategori'));
+
     }
 
     /**
@@ -57,21 +60,18 @@ class KasirController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'nama_kasir' => 'required',
-            'shift_mulai' => 'required',
-            'shift_akhir' => 'required',
-            'nohp' => 'required',
+            'nama_kategori' => 'required',
+            'nama_supplier' => 'required',
+
         ]);
 
         $data = [
-            'nama_kasir' => $request->nama_kasir,
-            'shift_mulai' => $request->shift_mulai,
-            'shift_akhir' => $request->shift_akhir,
-            'nohp' => $request->nohp,
+            'nama_kategori' => $request->nama_kategori,
+            'nama_supplier' => $request->nama_supplier,
         ];
 
-        DB::table('kasir')->where('kode_kasir', $id)->update($data);
-        return redirect()->route('kasir.index')->with('success', 'Data kasir berhasil diperbarui.');
+        DB::table('kategori')->where('kode_kategori', $id)->update($data);
+        return Redirect::route('kategori.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -79,7 +79,7 @@ class KasirController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('kasir')->where('kode_kasir', $id)->delete();
-        return redirect()->route('kasir.index')->with('success', 'Data kasir berhasil dihapus.');
+        DB::table('kategori')->where('kode_kategori', $id)->delete();
+        return Redirect::route('kategori.index')->with('success', 'Data Berhasil Dihapus');
     }
 }
