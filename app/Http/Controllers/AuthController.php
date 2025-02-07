@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
 
-}
-    public fundction loginkasir(request $request)
+    public function loginkasir(request $request)
     {
 if(auth::guard('kasir')->attempt([
     'nik' => $request->nis,
@@ -54,30 +53,4 @@ if(auth::guard('kasir')->attempt([
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
