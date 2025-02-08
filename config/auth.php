@@ -40,7 +40,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-    ],
+
 
         'kasir' => [
             'driver' => 'session',
@@ -51,7 +51,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-    ];
+    ],
 
     /*
     |--------------------------------------------------------------------------
