@@ -42,6 +42,17 @@ return [
         ],
     ],
 
+        'kasir' => [
+            'driver' => 'session',
+            'provider' => 'Kasirs',
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -63,6 +74,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'Kasir' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\data_kasirs::class,
         ],
 
         // 'users' => [
