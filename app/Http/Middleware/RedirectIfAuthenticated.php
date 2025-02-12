@@ -13,22 +13,23 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)
      */
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
 
+
         foreach ($guards as $guard) {
-            if (guard == 'kasir' && auth ::guard($guard)->check()){
+            if (guard == 'kasir' && auth ::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOMEKASIR);
             }
-            if ($guard == 'admin' && auth::guard($guarrd)->check()){
+            if ($guard == 'admin' && auth::guard($guarrd)->check()) {
                 return redirect(RouteServiceProvider::HOMEADMIN);
             }
-        }  
-            
-        
+        }
+
+
         return $next ($request);
     }
 
