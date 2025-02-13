@@ -32,8 +32,8 @@ if(auth::guard('kasir')->attempt([
     }
     public function loginadmin(request $request)
     {
-        if(auth::guard('admin')->attempt([
-            'nik' => $request->nis,
+        if(Auth::guard('admin')->attempt([
+            'email' => $request->email,
             'password' => $request->password]))
             {
                 dd('berhasil: '.auth::guard('admin')->user());
