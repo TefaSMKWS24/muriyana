@@ -12,7 +12,9 @@ class AuthController extends Controller
 
 
 
-        if(Auth::guard('kasir')->attempt([
+
+       if(Auth::guard('kasir')->attempt([
+
                                     'kode_kasir' => $request->kode_kasir,
                                     'password' => $request->password]))
         {
