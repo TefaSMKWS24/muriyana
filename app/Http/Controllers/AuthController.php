@@ -35,6 +35,8 @@ if(auth::guard('kasir')->attempt([
     public function loginadmin(request $request)
     {
         if(Auth::guard('admin')->attempt([
+
+
             'email' => $request->email,
             'password' => $request->password]))
             {
