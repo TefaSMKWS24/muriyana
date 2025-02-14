@@ -74,12 +74,12 @@ return [
 
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Users::class,
+            'model' => App\Models\User::class,
         ],
 
         'Kasirs' => [
             'driver' => 'eloquent',
-            'model' => App\Models\data_kasirs::class,
+            'model' => App\Models\data_kasir::class,
         ],
 
         // 'users' => [

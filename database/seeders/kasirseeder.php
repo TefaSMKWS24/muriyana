@@ -16,8 +16,8 @@ class kasirseeder extends Seeder
     {
         $data = [
             [
-                'email' => 'admin@admin.com',
-                'name' => 'admin',
+                'kode_kasir' => 'KS01',
+                'name' => 'Kasir 1',
                 'password' => Hash::make('12345678')
             ],
         ];
